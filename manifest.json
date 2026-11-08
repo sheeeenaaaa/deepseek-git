@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "DeepSeek 对话分支树",
+  "version": "0.2.0",
+  "description": "把 DeepSeek 网页版里编辑消息 / 重新生成产生的对话分支画成 Git 风格的树，点击节点即可切换分支并定位消息。",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "host_permissions": [
+    "https://chat.deepseek.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chat.deepseek.com/*"
+      ],
+      "js": [
+        "core.js",
+        "content.js"
+      ],
+      "css": [
+        "content.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
